@@ -122,10 +122,10 @@ Arena = function(game) //on créée notre objet Arena qui prend l'objet game en 
     // mettre les textures
     box1.material = fire;
     box2.material = fire;
-    box3.material = fire;
+    box3.material = videomat;
     plate.material = grass;
     cube.material = floor;
-    cylindre1.material = grass;
+    cylindre1.material = fire;
     sphere0.material = fire;
     boxArena.material = grass;
 
@@ -205,32 +205,30 @@ Arena.prototype={
       // Animation des plateformes (translation, rotation, redimensionnement ...)
       /*TODO*/
 
-
-
         // Redimensionnement
-        // var animationBox = new BABYLON.Animation("myAnimation", "scaling.x", 30, BABYLON.Animation.ANIMATIONTYPE_FLOAT, BABYLON.Animation.ANIMATIONLOOPMODE_CYCLE);
-        //
-        // var keyFrames = [];
-        //
-        // keyFrames.push({
-        //     frame: 0,
-        //     value: 1
-        // });
-        //
-        // keyFrames.push({
-        //     frame: 40,
-        //     value: 0.2
-        // });
-        //
-        // keyFrames.push({
-        //     frame: 100,
-        //     value: 1
-        // });
-        //
-        // animationBox.setKeys(keyFrames);
-        // box3.animations = [];
-        // box3.animations.push(animationBox);
-        // scene.beginAnimation(box3, 0, 100, true);
+        var animationBox = new BABYLON.Animation("myAnimation", "scaling.x", 30, BABYLON.Animation.ANIMATIONTYPE_FLOAT, BABYLON.Animation.ANIMATIONLOOPMODE_CYCLE);
+
+        var keyFrames = [];
+
+        keyFrames.push({
+            frame: 0,
+            value: 1
+        });
+
+        keyFrames.push({
+            frame: 40,
+            value: 0.2
+        });
+
+        keyFrames.push({
+            frame: 100,
+            value: 1
+        });
+
+        animationBox.setKeys(keyFrames);
+        box3.animations = [];
+        box3.animations.push(animationBox);
+        scene.beginAnimation(box3, 0, 100, true);
 
         // Rotation
         var animationBall = new BABYLON.Animation("AnimeBox", "rotation.x", 30, BABYLON.Animation.ANIMATIONTYPE_FLOAT, BABYLON.Animation.ANIMATIONLOOPMODE_CYCLE);

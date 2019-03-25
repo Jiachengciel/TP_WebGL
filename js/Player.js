@@ -16,7 +16,6 @@ Player = function(game, canvas) //On définit l'objet Player dans lequel on va p
   */
 
   //Quand les touches de déplacement sont relachées, on met les axes de déplacement de la caméra à faux
-  // 这里键盘输入有问题！！！
    //à décommenter
   window.addEventListener( "KeyUp" , function(evt) {
     //TODO
@@ -122,14 +121,14 @@ Player = function(game, canvas) //On définit l'objet Player dans lequel on va p
   window.addEventListener("keypress", function(evt) {
     if(evt.type === 32){
       console.log('Jumped!')
-      // if(_this.camera.canJump===true){
-      //   _this.camera.jumpNeed = _this.camera.playerBox.position.y + _this.jumpHeight;
-      //   _this.camera.canJump=false;
-      //   // var data={
-      //   //   jumpNeed : _this.camera.jumpNeed
-      //   // };
-      //   // _this.sendNewData(data)
-      // }
+      if(_this.camera.canJump===true){
+        _this.camera.jumpNeed = _this.camera.playerBox.position.y + _this.jumpHeight;
+        _this.camera.canJump=false;
+        // var data={
+        //   jumpNeed : _this.camera.jumpNeed
+        // };
+        // _this.sendNewData(data)
+      }
     }
   }, false);
 
